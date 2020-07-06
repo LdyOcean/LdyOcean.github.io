@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#34495e">
-  <title>归途</title>
+  <title>JavaScript学习笔记 | 归途</title>
   <link rel="alternate" href="path/of/rss" type="application/atom+xml">
   <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
   
@@ -60,8 +60,11 @@
     <!-- <img src="/" alt="banner"> -->
     <div class="banner-title">
       
-        <div class="intro">
-          practice makes perfect
+        <div class="post-title">
+          JavaScript学习笔记
+            <div class="post-tags">
+    		    
+    	      </div>
         </div>
       
     </div>
@@ -69,110 +72,35 @@
 </div>
 
       <main class="main"id="main">
-          <section class="posts">
+          <article class="post">
   
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/07/06/JDBC%EF%BC%88Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JDBC（Java连接数据库）学习笔记</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-07-06</span>
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>JavaScript学习笔记</h1>
+        <div class="post-tags">
         
-          <h1 id="JDBC-DAO（Java连接数据库）学习笔记"><a href="#JDBC-DAO（Java连接数据库）学习笔记" class="headerlink" title="JDBC+DAO（Java连接数据库）学习笔记"></a>JDBC+DAO（Java连接数据库）学习笔记</h1><h2 id="一：JDBC基本接口类介绍-如何使用"><a href="#一：JDBC基本接口类介绍-如何使用" class="headerlink" title="一：JDBC基本接口类介绍+如何使用"></a>一：JDBC基本接口类介绍+如何使用</h2><h4 id="01：DriverManager类介绍"><a href="#01：DriverManager类介绍" class="headerlink" title="01：DriverManager类介绍"></a>01：DriverManager类介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DriverManager;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>该类负责管理各种不同的JDBC驱动</li>
-<li>连接不同的数据库时需要用DriverManager管理加载不同的驱动地址（jar包地址.Driver）</li>
-</ul>
-<h4 id="02：Connection接口介绍"><a href="#02：Connection接口介绍" class="headerlink" title="02：Connection接口介绍"></a>02：Connection接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>该接口负责连接数据库并担任传输数据的任务</li>
-<li>使用该接口获取数据库地址，连接用户名，连接密码之后连接到目标数据库</li>
-</ul>
-<h4 id="03：Statement接口介绍"><a href="#03：Statement接口介绍" class="headerlink" title="03：Statement接口介绍"></a>03：Statement接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Statement;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>该接口由Connection产生，负责执行SQL语句</li>
-<li>使用该接口对象调用execute[….]（SQL语句）等一系列方法执行SQL语句获取想得到的效果</li>
-</ul>
-<h4 id="04：ResultSet接口介绍"><a href="#04：ResultSet接口介绍" class="headerlink" title="04：ResultSet接口介绍"></a>04：ResultSet接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>该接口负责接收处理Statement执行SQL后返回的结果</li>
-<li>可以用该接口的对象调用next，get…(标识)等一系列方法获取其当中的值</li>
-</ul>
-<h4 id="05：PreparedStatement接口介绍"><a href="#05：PreparedStatement接口介绍" class="headerlink" title="05：PreparedStatement接口介绍"></a>05：PreparedStatement接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PreparedStatement;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>该接口继承至Statement，同样是负责SQL语句的执行</li>
-<li>该接口可以使用conn.prepareStatement(sql)预先编译SQL再填充部分占位值，然后使用execute[….]（SQL语句）等一系列方法执行SQL语句获取想得到的效果，比起Statement接口也可以更灵活安全的执行SQL</li>
-<li>程序执行SQL推荐用该接口执行</li>
-</ul>
-<h4 id="06：增删改操作详解-在操作前记得要配置相关驱动jar包"><a href="#06：增删改操作详解-在操作前记得要配置相关驱动jar包" class="headerlink" title="06：增删改操作详解(在操作前记得要配置相关驱动jar包)"></a>06：增删改操作详解(在操作前记得要配置相关驱动jar包)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先定义各所需对象</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver = <span class="string">"驱动地址.Driver"</span>; <span class="comment">// 驱动</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url = <span class="string">"jdbc:数据库名（mysql）://访问地址（localhost）:端口名（3306）/所要连接的数据库"</span>; <span class="comment">// URL地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user = <span class="string">"用户名"</span>; <span class="comment">// 用户名</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password = <span class="string">"密码"</span>; <span class="comment">// 密码</span></span><br><span class="line">Connection conn = <span class="keyword">null</span>; <span class="comment">// 连接对象</span></span><br><span class="line">PreparedStatement stmt = <span class="keyword">null</span>;	<span class="comment">// 执行SQL接口对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//加载驱动</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	Class.forName(driver);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取连接</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行SQL操作</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//预编译SQL语句1</span></span><br><span class="line">	stmt = conn.prepareStatement(sql);</span><br><span class="line">	<span class="comment">//为sql占位参数赋值</span></span><br><span class="line">	stmt.set数据类型(标识（<span class="number">1</span>，<span class="number">2</span>）,数据 );</span><br><span class="line">    ......</span><br><span class="line">	<span class="comment">//执行sql语句并接收受影响行数</span></span><br><span class="line">	<span class="keyword">int</span> num = stmt.executeUpdate();</span><br><span class="line">    <span class="comment">//处理返回结果</span></span><br><span class="line">    ......</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	<span class="comment">//关闭所有资源（注意先打开的后关闭）</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (stmt != <span class="keyword">null</span>) &#123;</span><br><span class="line">			stmt.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="07：查询操作详解-在操作前记得要配置相关驱动jar包"><a href="#07：查询操作详解-在操作前记得要配置相关驱动jar包" class="headerlink" title="07：查询操作详解(在操作前记得要配置相关驱动jar包)"></a>07：查询操作详解(在操作前记得要配置相关驱动jar包)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先定义各所需对象</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver = <span class="string">"驱动地址.Driver"</span>; <span class="comment">// 驱动</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url = <span class="string">"jdbc:数据库名（mysql）://访问地址（localhost）:端口名（3306）/所要连接的数据库"</span>; <span class="comment">// URL地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user = <span class="string">"用户名"</span>; <span class="comment">// 用户名</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password = <span class="string">"密码"</span>; <span class="comment">// 密码</span></span><br><span class="line">Connection conn = <span class="keyword">null</span>; <span class="comment">// 连接对象</span></span><br><span class="line">PreparedStatement stmt = <span class="keyword">null</span>;	<span class="comment">// 执行SQL接口对象</span></span><br><span class="line">ResultSet resu = <span class="keyword">null</span>;	<span class="comment">//接收返回结果集对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//加载驱动</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	Class.forName(driver);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取连接</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行SQL操作</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//预编译SQL语句1</span></span><br><span class="line">	stmt = conn.prepareStatement(sql);</span><br><span class="line">	<span class="comment">//为sql占位参数赋值</span></span><br><span class="line">	stmt.set数据类型(标识（<span class="number">1</span>，<span class="number">2</span>）,数据 );</span><br><span class="line">    ......</span><br><span class="line">	<span class="comment">//执行sql语句并接收返回结果集</span></span><br><span class="line">	resu = stmt.executeQuery();</span><br><span class="line">    <span class="comment">//处理返回结果</span></span><br><span class="line">    <span class="keyword">while</span>(resu.next())&#123;	<span class="comment">//循环获取结果集中数据</span></span><br><span class="line">        类型 变量名 = resu.get类型(标识<span class="number">1</span>，<span class="number">2</span>或者列名);</span><br><span class="line">   		......</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	<span class="comment">//关闭所有资源（注意先打开的后关闭）</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (resu != <span class="keyword">null</span>) &#123;</span><br><span class="line">			resu.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (stmt != <span class="keyword">null</span>) &#123;</span><br><span class="line">			stmt.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="08：SQL语句字符串注意事项"><a href="#08：SQL语句字符串注意事项" class="headerlink" title="08：SQL语句字符串注意事项"></a>08：SQL语句字符串注意事项</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">"SELECT * FROM 数据库名 WHERE 字段 = '?'"</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>在此代码中？不会被识别为占位符，在需要插入数据为字符串类型时不用加’单引号包裹’，MYSQL会自动识别</li>
-</ul>
-<h2 id="二：DAO模式详解"><a href="#二：DAO模式详解" class="headerlink" title="二：DAO模式详解"></a>二：DAO模式详解</h2><h4 id="01：数据持久化"><a href="#01：数据持久化" class="headerlink" title="01：数据持久化"></a>01：数据持久化</h4><ul>
-<li>将程序中的数据在瞬时状态和持久状态间转换的机制即为数据持久化</li>
-<li>数据的持久化方式一般有：数据库存储，文件存储和XML文件存储等等……</li>
-</ul>
-<h4 id="02-DAO概要"><a href="#02-DAO概要" class="headerlink" title="02:DAO概要"></a>02:DAO概要</h4><ul>
-<li>使用面向接口编程的模式将JDBC封装的结构被称之为DAO模式</li>
-<li>DAO模式可以降低代码间的耦合性，增强代码的复用性与可维护性，同时也能进一步的保证程序的安全</li>
-<li>DAO模式组成：DAO接口 + DAO实现类 + 实体类 + 数据库连接和关闭工具类（可在其中定义公共增删改方法）</li>
-<li>DAO主要就是定义所需要的SQL操作服务接口，再由实现类去实现其中的服务方法，DAO公共类是为了增强代码复用存在，将增删改，获取连接和关闭资源定义为方法，以便实现代码复用</li>
-</ul>
-<h2 id="三：Properties类概要使用详解"><a href="#三：Properties类概要使用详解" class="headerlink" title="三：Properties类概要使用详解"></a>三：Properties类概要使用详解</h2><h4 id="01：Properties概要"><a href="#01：Properties概要" class="headerlink" title="01：Properties概要"></a>01：Properties概要</h4><ul>
-<li>让用户脱离程序本身修改相关的变量设置——使用配置文件（properties文件）</li>
-<li>在配置文件中设置jdbc所需要的各变量值，就可以无需重新编译就可以修改数据</li>
-<li>在Java中通过Properties类中的方法配合IO流就可以获取到配置文件中的数据信息</li>
-</ul>
-<h4 id="02：实际操作"><a href="#02：实际操作" class="headerlink" title="02：实际操作"></a>02：实际操作</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#右键新建File(properties文件)存入以下数据</span><br><span class="line">driver=驱动地址.Driver</span><br><span class="line">url=jdbc:数据库名（mysql）:<span class="comment">//访问地址（localhost）:端口名（3306）/所要连接的数据库[?useUnicode=true&amp;characterEncoding=GBK]</span></span><br><span class="line">#?useUnicode=true&amp;characterEncoding=GBK传递该客户端编码到数据库服务端，方便解析数据</span><br><span class="line">user=用户名</span><br><span class="line">password=密码</span><br><span class="line">    </span><br><span class="line"><span class="comment">//回到编码页面</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver; <span class="comment">// 驱动</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url; <span class="comment">// 数据库地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user; <span class="comment">// 用户名</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password; <span class="comment">// 密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用静态特征获取配置文件中连接所用数据</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">// 创建配置对象</span></span><br><span class="line">	Properties params = <span class="keyword">new</span> Properties();</span><br><span class="line">	<span class="comment">// 获取配置文件所在路径</span></span><br><span class="line">	String file = <span class="string">"database.properties"</span>;</span><br><span class="line">	<span class="comment">// 加载配置文件到输入流</span></span><br><span class="line">	InputStream is = BaseDao<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>().<span class="title">getResourceAsStream</span>(<span class="title">file</span>)</span>;</span><br><span class="line">	<span class="comment">// 从输入流中读取键值数据</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		params.load(is);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 根据指定键获取相对应值</span></span><br><span class="line">	BaseDao.driver = params.getProperty(<span class="string">"driver"</span>);</span><br><span class="line">	BaseDao.url = params.getProperty(<span class="string">"url"</span>);</span><br><span class="line">	BaseDao.user = params.getProperty(<span class="string">"user"</span>);</span><br><span class="line">	BaseDao.password = params.getProperty(<span class="string">"password"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>?useUnicode=true&amp;characterEncoding=当前程序字符集可以防止编程软件在和数据库进行数据交接时会出现的编码问题</li>
-</ul>
-
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
+        </div>
     </div>
-    </article>
-  
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/07/06/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JavaScript学习笔记</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-07-06</span>
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-07-06</span>
+      
+      <!----------------------------------->
         
-          <h1 id="JavaScript学习笔记-Ldy"><a href="#JavaScript学习笔记-Ldy" class="headerlink" title="JavaScript学习笔记(Ldy)"></a>JavaScript学习笔记(Ldy)</h1><h2 id="一：JS基础"><a href="#一：JS基础" class="headerlink" title="一：JS基础"></a>一：JS基础</h2><h3 id="01：变量"><a href="#01：变量" class="headerlink" title="01：变量"></a>01：变量</h3><h4 id="1：变量定义"><a href="#1：变量定义" class="headerlink" title="1：变量定义"></a>1：变量定义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名 = 任意类型值;</span><br></pre></td></tr></table></figure>
+      <!----------------------------------->
+    </div>
+  </header>
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript学习笔记-Ldy"><span class="toc-text">JavaScript学习笔记(Ldy)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：JS基础"><span class="toc-text">一：JS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：变量"><span class="toc-text">01：变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：变量定义"><span class="toc-text">1：变量定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：数据类型"><span class="toc-text">2：数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：数值类型基本函数"><span class="toc-text">3：数值类型基本函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：运算符"><span class="toc-text">02：运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：概要"><span class="toc-text">1：概要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：全等与不全等"><span class="toc-text">2：全等与不全等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：instanceof-关键字"><span class="toc-text">3：instanceof 关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：运算符顺序"><span class="toc-text">4：运算符顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：断点调试"><span class="toc-text">03：断点调试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：调试方法"><span class="toc-text">1：调试方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：调试小方法"><span class="toc-text">2：调试小方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：数组"><span class="toc-text">04：数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：创建数组"><span class="toc-text">1：创建数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：数组常用函数"><span class="toc-text">2：数组常用函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：函数"><span class="toc-text">05：函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：定义函数"><span class="toc-text">1：定义函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：参数详解"><span class="toc-text">2：参数详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：返回值"><span class="toc-text">3：返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：函数内置对象使用"><span class="toc-text">4：函数内置对象使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：作用域"><span class="toc-text">06：作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01：变量作用域"><span class="toc-text">01：变量作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#02：函数作用域"><span class="toc-text">02：函数作用域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07：预解析"><span class="toc-text">07：预解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08：对象详解"><span class="toc-text">08：对象详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：创建对象"><span class="toc-text">1：创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：使用对象"><span class="toc-text">2：使用对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：遍历对象"><span class="toc-text">3：遍历对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#09：内置对象"><span class="toc-text">09：内置对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10：如何定义-JavaScript-代码"><span class="toc-text">10：如何定义 JavaScript 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11：常用函数API"><span class="toc-text">11：常用函数API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：JS核心DOM"><span class="toc-text">二：JS核心DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：如何获取页面-元素-element-对象"><span class="toc-text">01：如何获取页面 元素(element)对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：页面文档模型对象"><span class="toc-text">1：页面文档模型对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：获取页面元素对象-无兼容性问题"><span class="toc-text">2：获取页面元素对象(无兼容性问题)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：HTML5新增获取页面元素对象函数（IE9以上版本支持）"><span class="toc-text">3：HTML5新增获取页面元素对象函数（IE9以上版本支持）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：事件详解"><span class="toc-text">02：事件详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概要：触发-gt-响应事件"><span class="toc-text">概要：触发 &gt; 响应事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1：鼠标事件（MouseEvent）"><span class="toc-text">1：鼠标事件（MouseEvent）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：键盘事件（KeyboardEvent）"><span class="toc-text">2：键盘事件（KeyboardEvent）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：添加事件"><span class="toc-text">3：添加事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：删除事件"><span class="toc-text">4：删除事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：事件流详解"><span class="toc-text">5：事件流详解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①：事件流分类"><span class="toc-text">①：事件流分类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6：事件对象"><span class="toc-text">6：事件对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：操作页面元素"><span class="toc-text">03：操作页面元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：修改获取元素内容"><span class="toc-text">1：修改获取元素内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：修改元素属性"><span class="toc-text">2：修改元素属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3：获取属性-自定义元素属性"><span class="toc-text">3：获取属性+自定义元素属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①：获取属性"><span class="toc-text">①：获取属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②：定义属性"><span class="toc-text">②：定义属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#③：删除属性"><span class="toc-text">③：删除属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：节点-node-操作"><span class="toc-text">04：节点(node) 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：获取节点"><span class="toc-text">1：获取节点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①：获取父节点"><span class="toc-text">①：获取父节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②：获取子节点"><span class="toc-text">②：获取子节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#③：获取第一个子节点与最后一个子节点"><span class="toc-text">③：获取第一个子节点与最后一个子节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#④：获取兄弟节点"><span class="toc-text">④：获取兄弟节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：创建节点"><span class="toc-text">2：创建节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：追加节点"><span class="toc-text">3：追加节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：删除节点"><span class="toc-text">4：删除节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：克隆节点"><span class="toc-text">5：克隆节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6：替换节点"><span class="toc-text">6：替换节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三：JS核心BOM"><span class="toc-text">三：JS核心BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#01：事件"><span class="toc-text">01：事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：页面操作事件"><span class="toc-text">1：页面操作事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：滚动事件"><span class="toc-text">2：滚动事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：移动端事件"><span class="toc-text">3：移动端事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：定时器"><span class="toc-text">4：定时器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：监听过渡事件-发生改变事件"><span class="toc-text">5：监听过渡事件+发生改变事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：获取页面数据"><span class="toc-text">02：获取页面数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：页面数据"><span class="toc-text">1：页面数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：回调函数"><span class="toc-text">03：回调函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述：回调函数为当一个任务执行完毕后回头调用的函数，比如我们的定时器中函数就属于回调函数"><span class="toc-text">概述：回调函数为当一个任务执行完毕后回头调用的函数，比如我们的定时器中函数就属于回调函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：BOM对象"><span class="toc-text">04：BOM对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：location对象"><span class="toc-text">1：location对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：navigator对象"><span class="toc-text">2：navigator对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：history对象"><span class="toc-text">3：history对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：元素偏移量offset系列（常用于获取元素位置）"><span class="toc-text">05：元素偏移量offset系列（常用于获取元素位置）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：元素可视区client系列（常用于获取元素大小）"><span class="toc-text">06：元素可视区client系列（常用于获取元素大小）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07：元素滚动scroll系列（常用于获取元素滚动距离）"><span class="toc-text">07：元素滚动scroll系列（常用于获取元素滚动距离）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08：立即执行函数"><span class="toc-text">08：立即执行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#09：缓步动画原理"><span class="toc-text">09：缓步动画原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10：classList类名操作"><span class="toc-text">10：classList类名操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11：移动端开发常用插件"><span class="toc-text">11：移动端开发常用插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12：开发常用框架"><span class="toc-text">12：开发常用框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13：本地存储"><span class="toc-text">13：本地存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：sessionStorage-5M"><span class="toc-text">1：sessionStorage(5M)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：locaStorage-20M"><span class="toc-text">2：locaStorage(20M)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四：JSOOP-面向对象"><span class="toc-text">四：JSOOP(面向对象)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：创建类"><span class="toc-text">01：创建类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：构造函数"><span class="toc-text">02：构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：ES6新增函数"><span class="toc-text">03：ES6新增函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：如何改变this指向"><span class="toc-text">04：如何改变this指向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：严格模式"><span class="toc-text">05：严格模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：拷贝"><span class="toc-text">06：拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07：正则表达式"><span class="toc-text">07：正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08：新增语法规范"><span class="toc-text">08：新增语法规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五：JQuery"><span class="toc-text">五：JQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：JQuery在线帮助文档"><span class="toc-text">01：JQuery在线帮助文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：JQuery基本函数"><span class="toc-text">02：JQuery基本函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：选择器"><span class="toc-text">1：选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：初始化函数"><span class="toc-text">2：初始化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：设置CSS样式"><span class="toc-text">3：设置CSS样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：设置类名样式"><span class="toc-text">4：设置类名样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：动画效果"><span class="toc-text">5：动画效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6：得到当前元素索引号"><span class="toc-text">6：得到当前元素索引号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7：获取元素属性"><span class="toc-text">7：获取元素属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8：设置元素内存属性"><span class="toc-text">8：设置元素内存属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9：操作元素内容文本"><span class="toc-text">9：操作元素内容文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10：保留小数位"><span class="toc-text">10：保留小数位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11：each方法"><span class="toc-text">11：each方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12：元素尺寸"><span class="toc-text">12：元素尺寸</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13：位置偏移"><span class="toc-text">13：位置偏移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14：返回顶部"><span class="toc-text">14：返回顶部</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15：拷贝对象"><span class="toc-text">15：拷贝对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：jQuery对象和DOM对象"><span class="toc-text">03：jQuery对象和DOM对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：事件操作"><span class="toc-text">04：事件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：绑定事件"><span class="toc-text">1：绑定事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：解绑事件"><span class="toc-text">2：解绑事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：自动调用事件"><span class="toc-text">3：自动调用事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：多库共存"><span class="toc-text">05：多库共存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：jQuery插件"><span class="toc-text">06：jQuery插件</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+  <div class="post-content">
+    <h1 id="JavaScript学习笔记-Ldy"><a href="#JavaScript学习笔记-Ldy" class="headerlink" title="JavaScript学习笔记(Ldy)"></a>JavaScript学习笔记(Ldy)</h1><h2 id="一：JS基础"><a href="#一：JS基础" class="headerlink" title="一：JS基础"></a>一：JS基础</h2><h3 id="01：变量"><a href="#01：变量" class="headerlink" title="01：变量"></a>01：变量</h3><h4 id="1：变量定义"><a href="#1：变量定义" class="headerlink" title="1：变量定义"></a>1：变量定义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名 = 任意类型值;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>JS变量定义时无多个类型关键字，var一招走遍天下</li>
@@ -987,62 +915,28 @@
 <h3 id="06：jQuery插件"><a href="#06：jQuery插件" class="headerlink" title="06：jQuery插件"></a>06：jQuery插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jQuery插件库：http:<span class="comment">//www.jq22.com/</span></span><br><span class="line">jQuery之家：http:<span class="comment">//www.htmleaf.com/</span></span><br><span class="line">全屏滚动：http:<span class="comment">//www.dowebok.com/demo/2014/77/</span></span><br><span class="line">Bootstrap插件：https:<span class="comment">//v3.bootcss.com/</span></span><br></pre></td></tr></table></figure>
 
 
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-    <article class="post" id="post-excerpt">
-      <header>
-        <div class="post-title">
-          <h1><a class="post-title-link" href="/2020/07/06/hello-world/">Hello World</a></h1>
-        </div>
-        <div class="post-meta">
-          <span class="post-time"><i class="iconfont icon-calendar"></i>2020-07-06</span>
-          
-          <!---------------------------------------->
-            
-        <!----------------------------------------->
-        </div>
-      </header>
-      <div class="post-content">
-        <!-------------->
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-        <!-------------->
-      </div>
-      <div class="post-tags">
-      
-    </div>
-    </article>
-  
-</section>
+  </div>
+  <div class="post-footer">the end</div>
+</article>
 
           
-     <nav class="pagination">
+  <nav class="pagination post-nav">
     
+      <a href="/2020/07/06/JDBC%EF%BC%88Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <span class="prev-post"><i class="iconfont icon-back"></i>JDBC（Java连接数据库）学习笔记</span>
+      </a>
+    
+    
+      <a href="/2020/07/06/hello-world/">
+        <span class="next-post">Hello World<i class="iconfont icon-more"></i></span>
+      </a>
     
   </nav>
 
 
           
+  
+
 
       </main>
     </div>

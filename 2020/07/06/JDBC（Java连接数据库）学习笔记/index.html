@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#34495e">
+  <title>JDBC（Java连接数据库）学习笔记 | 归途</title>
+  <link rel="alternate" href="path/of/rss" type="application/atom+xml">
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+
+  
+
+  
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+  <div class="mobile-header">
+    <span><i class="iconfont icon-turnon" id="mobile-nav-toggle"></i></span>
+    <div class="mobile-logo">
+      <a href="/.">Ztopic</a>
+    </div>
+  </div>
+  <div class="page" id="mobile-nav-panel">
+    <div class="container">
+      <header class="site-nav">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/">Ztopic</a>
+        </div>
+        <nav class="navbar">
+          <ul>
+            
+              <li class="menu-item">
+                <a href="/" class="menu-item-link"><i class="iconfont icon-home"></i>首页</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/archives" class="menu-item-link"><i class="iconfont icon-archive"></i>归档</a>
+              </li>
+            
+              <li class="menu-item">
+                <a href="/about" class="menu-item-link"><i class="iconfont icon-about"></i>关于</a>
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+</header>
+
+      <div class="banner">
+  <div class="show">
+    <!-- <img src="/" alt="banner"> -->
+    <div class="banner-title">
+      
+        <div class="post-title">
+          JDBC（Java连接数据库）学习笔记
+            <div class="post-tags">
+    		    
+    	      </div>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+      <main class="main"id="main">
+          <article class="post">
+  
+
+  <header>
+    <div class="post-title mobile-post-title">
+      <h1>JDBC（Java连接数据库）学习笔记</h1>
+        <div class="post-tags">
+        
+        </div>
+    </div>
+    <div class="post-meta">
+      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-07-06</span>
+      
+      <!----------------------------------->
+        
+      <!----------------------------------->
+    </div>
+  </header>
+  
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JDBC-DAO（Java连接数据库）学习笔记"><span class="toc-text">JDBC+DAO（Java连接数据库）学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：JDBC基本接口类介绍-如何使用"><span class="toc-text">一：JDBC基本接口类介绍+如何使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01：DriverManager类介绍"><span class="toc-text">01：DriverManager类介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#02：Connection接口介绍"><span class="toc-text">02：Connection接口介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#03：Statement接口介绍"><span class="toc-text">03：Statement接口介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#04：ResultSet接口介绍"><span class="toc-text">04：ResultSet接口介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#05：PreparedStatement接口介绍"><span class="toc-text">05：PreparedStatement接口介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#06：增删改操作详解-在操作前记得要配置相关驱动jar包"><span class="toc-text">06：增删改操作详解(在操作前记得要配置相关驱动jar包)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#07：查询操作详解-在操作前记得要配置相关驱动jar包"><span class="toc-text">07：查询操作详解(在操作前记得要配置相关驱动jar包)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#08：SQL语句字符串注意事项"><span class="toc-text">08：SQL语句字符串注意事项</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：DAO模式详解"><span class="toc-text">二：DAO模式详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01：数据持久化"><span class="toc-text">01：数据持久化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#02-DAO概要"><span class="toc-text">02:DAO概要</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三：Properties类概要使用详解"><span class="toc-text">三：Properties类概要使用详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01：Properties概要"><span class="toc-text">01：Properties概要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#02：实际操作"><span class="toc-text">02：实际操作</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+  </div>
+
+
+  <div class="post-content">
+    <h1 id="JDBC-DAO（Java连接数据库）学习笔记"><a href="#JDBC-DAO（Java连接数据库）学习笔记" class="headerlink" title="JDBC+DAO（Java连接数据库）学习笔记"></a>JDBC+DAO（Java连接数据库）学习笔记</h1><h2 id="一：JDBC基本接口类介绍-如何使用"><a href="#一：JDBC基本接口类介绍-如何使用" class="headerlink" title="一：JDBC基本接口类介绍+如何使用"></a>一：JDBC基本接口类介绍+如何使用</h2><h4 id="01：DriverManager类介绍"><a href="#01：DriverManager类介绍" class="headerlink" title="01：DriverManager类介绍"></a>01：DriverManager类介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DriverManager;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该类负责管理各种不同的JDBC驱动</li>
+<li>连接不同的数据库时需要用DriverManager管理加载不同的驱动地址（jar包地址.Driver）</li>
+</ul>
+<h4 id="02：Connection接口介绍"><a href="#02：Connection接口介绍" class="headerlink" title="02：Connection接口介绍"></a>02：Connection接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Connection;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该接口负责连接数据库并担任传输数据的任务</li>
+<li>使用该接口获取数据库地址，连接用户名，连接密码之后连接到目标数据库</li>
+</ul>
+<h4 id="03：Statement接口介绍"><a href="#03：Statement接口介绍" class="headerlink" title="03：Statement接口介绍"></a>03：Statement接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Statement;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该接口由Connection产生，负责执行SQL语句</li>
+<li>使用该接口对象调用execute[….]（SQL语句）等一系列方法执行SQL语句获取想得到的效果</li>
+</ul>
+<h4 id="04：ResultSet接口介绍"><a href="#04：ResultSet接口介绍" class="headerlink" title="04：ResultSet接口介绍"></a>04：ResultSet接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ResultSet;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该接口负责接收处理Statement执行SQL后返回的结果</li>
+<li>可以用该接口的对象调用next，get…(标识)等一系列方法获取其当中的值</li>
+</ul>
+<h4 id="05：PreparedStatement接口介绍"><a href="#05：PreparedStatement接口介绍" class="headerlink" title="05：PreparedStatement接口介绍"></a>05：PreparedStatement接口介绍</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PreparedStatement;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>该接口继承至Statement，同样是负责SQL语句的执行</li>
+<li>该接口可以使用conn.prepareStatement(sql)预先编译SQL再填充部分占位值，然后使用execute[….]（SQL语句）等一系列方法执行SQL语句获取想得到的效果，比起Statement接口也可以更灵活安全的执行SQL</li>
+<li>程序执行SQL推荐用该接口执行</li>
+</ul>
+<h4 id="06：增删改操作详解-在操作前记得要配置相关驱动jar包"><a href="#06：增删改操作详解-在操作前记得要配置相关驱动jar包" class="headerlink" title="06：增删改操作详解(在操作前记得要配置相关驱动jar包)"></a>06：增删改操作详解(在操作前记得要配置相关驱动jar包)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先定义各所需对象</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver = <span class="string">"驱动地址.Driver"</span>; <span class="comment">// 驱动</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url = <span class="string">"jdbc:数据库名（mysql）://访问地址（localhost）:端口名（3306）/所要连接的数据库"</span>; <span class="comment">// URL地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user = <span class="string">"用户名"</span>; <span class="comment">// 用户名</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password = <span class="string">"密码"</span>; <span class="comment">// 密码</span></span><br><span class="line">Connection conn = <span class="keyword">null</span>; <span class="comment">// 连接对象</span></span><br><span class="line">PreparedStatement stmt = <span class="keyword">null</span>;	<span class="comment">// 执行SQL接口对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//加载驱动</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	Class.forName(driver);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取连接</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行SQL操作</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//预编译SQL语句1</span></span><br><span class="line">	stmt = conn.prepareStatement(sql);</span><br><span class="line">	<span class="comment">//为sql占位参数赋值</span></span><br><span class="line">	stmt.set数据类型(标识（<span class="number">1</span>，<span class="number">2</span>）,数据 );</span><br><span class="line">    ......</span><br><span class="line">	<span class="comment">//执行sql语句并接收受影响行数</span></span><br><span class="line">	<span class="keyword">int</span> num = stmt.executeUpdate();</span><br><span class="line">    <span class="comment">//处理返回结果</span></span><br><span class="line">    ......</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	<span class="comment">//关闭所有资源（注意先打开的后关闭）</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (stmt != <span class="keyword">null</span>) &#123;</span><br><span class="line">			stmt.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="07：查询操作详解-在操作前记得要配置相关驱动jar包"><a href="#07：查询操作详解-在操作前记得要配置相关驱动jar包" class="headerlink" title="07：查询操作详解(在操作前记得要配置相关驱动jar包)"></a>07：查询操作详解(在操作前记得要配置相关驱动jar包)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//首先定义各所需对象</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver = <span class="string">"驱动地址.Driver"</span>; <span class="comment">// 驱动</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url = <span class="string">"jdbc:数据库名（mysql）://访问地址（localhost）:端口名（3306）/所要连接的数据库"</span>; <span class="comment">// URL地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user = <span class="string">"用户名"</span>; <span class="comment">// 用户名</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password = <span class="string">"密码"</span>; <span class="comment">// 密码</span></span><br><span class="line">Connection conn = <span class="keyword">null</span>; <span class="comment">// 连接对象</span></span><br><span class="line">PreparedStatement stmt = <span class="keyword">null</span>;	<span class="comment">// 执行SQL接口对象</span></span><br><span class="line">ResultSet resu = <span class="keyword">null</span>;	<span class="comment">//接收返回结果集对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//加载驱动</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	Class.forName(driver);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取连接</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">	conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//执行SQL操作</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">//预编译SQL语句1</span></span><br><span class="line">	stmt = conn.prepareStatement(sql);</span><br><span class="line">	<span class="comment">//为sql占位参数赋值</span></span><br><span class="line">	stmt.set数据类型(标识（<span class="number">1</span>，<span class="number">2</span>）,数据 );</span><br><span class="line">    ......</span><br><span class="line">	<span class="comment">//执行sql语句并接收返回结果集</span></span><br><span class="line">	resu = stmt.executeQuery();</span><br><span class="line">    <span class="comment">//处理返回结果</span></span><br><span class="line">    <span class="keyword">while</span>(resu.next())&#123;	<span class="comment">//循环获取结果集中数据</span></span><br><span class="line">        类型 变量名 = resu.get类型(标识<span class="number">1</span>，<span class="number">2</span>或者列名);</span><br><span class="line">   		......</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">	e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">	<span class="comment">//关闭所有资源（注意先打开的后关闭）</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (resu != <span class="keyword">null</span>) &#123;</span><br><span class="line">			resu.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (stmt != <span class="keyword">null</span>) &#123;</span><br><span class="line">			stmt.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">		</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> (conn != <span class="keyword">null</span>) &#123;</span><br><span class="line">			conn.close();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="08：SQL语句字符串注意事项"><a href="#08：SQL语句字符串注意事项" class="headerlink" title="08：SQL语句字符串注意事项"></a>08：SQL语句字符串注意事项</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String sql = <span class="string">"SELECT * FROM 数据库名 WHERE 字段 = '?'"</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在此代码中？不会被识别为占位符，在需要插入数据为字符串类型时不用加’单引号包裹’，MYSQL会自动识别</li>
+</ul>
+<h2 id="二：DAO模式详解"><a href="#二：DAO模式详解" class="headerlink" title="二：DAO模式详解"></a>二：DAO模式详解</h2><h4 id="01：数据持久化"><a href="#01：数据持久化" class="headerlink" title="01：数据持久化"></a>01：数据持久化</h4><ul>
+<li>将程序中的数据在瞬时状态和持久状态间转换的机制即为数据持久化</li>
+<li>数据的持久化方式一般有：数据库存储，文件存储和XML文件存储等等……</li>
+</ul>
+<h4 id="02-DAO概要"><a href="#02-DAO概要" class="headerlink" title="02:DAO概要"></a>02:DAO概要</h4><ul>
+<li>使用面向接口编程的模式将JDBC封装的结构被称之为DAO模式</li>
+<li>DAO模式可以降低代码间的耦合性，增强代码的复用性与可维护性，同时也能进一步的保证程序的安全</li>
+<li>DAO模式组成：DAO接口 + DAO实现类 + 实体类 + 数据库连接和关闭工具类（可在其中定义公共增删改方法）</li>
+<li>DAO主要就是定义所需要的SQL操作服务接口，再由实现类去实现其中的服务方法，DAO公共类是为了增强代码复用存在，将增删改，获取连接和关闭资源定义为方法，以便实现代码复用</li>
+</ul>
+<h2 id="三：Properties类概要使用详解"><a href="#三：Properties类概要使用详解" class="headerlink" title="三：Properties类概要使用详解"></a>三：Properties类概要使用详解</h2><h4 id="01：Properties概要"><a href="#01：Properties概要" class="headerlink" title="01：Properties概要"></a>01：Properties概要</h4><ul>
+<li>让用户脱离程序本身修改相关的变量设置——使用配置文件（properties文件）</li>
+<li>在配置文件中设置jdbc所需要的各变量值，就可以无需重新编译就可以修改数据</li>
+<li>在Java中通过Properties类中的方法配合IO流就可以获取到配置文件中的数据信息</li>
+</ul>
+<h4 id="02：实际操作"><a href="#02：实际操作" class="headerlink" title="02：实际操作"></a>02：实际操作</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#右键新建File(properties文件)存入以下数据</span><br><span class="line">driver=驱动地址.Driver</span><br><span class="line">url=jdbc:数据库名（mysql）:<span class="comment">//访问地址（localhost）:端口名（3306）/所要连接的数据库[?useUnicode=true&amp;characterEncoding=GBK]</span></span><br><span class="line">#?useUnicode=true&amp;characterEncoding=GBK传递该客户端编码到数据库服务端，方便解析数据</span><br><span class="line">user=用户名</span><br><span class="line">password=密码</span><br><span class="line">    </span><br><span class="line"><span class="comment">//回到编码页面</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String driver; <span class="comment">// 驱动</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String url; <span class="comment">// 数据库地址</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String user; <span class="comment">// 用户名</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String password; <span class="comment">// 密码</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//使用静态特征获取配置文件中连接所用数据</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    <span class="comment">// 创建配置对象</span></span><br><span class="line">	Properties params = <span class="keyword">new</span> Properties();</span><br><span class="line">	<span class="comment">// 获取配置文件所在路径</span></span><br><span class="line">	String file = <span class="string">"database.properties"</span>;</span><br><span class="line">	<span class="comment">// 加载配置文件到输入流</span></span><br><span class="line">	InputStream is = BaseDao<span class="class">.<span class="keyword">class</span>.<span class="title">getClassLoader</span>().<span class="title">getResourceAsStream</span>(<span class="title">file</span>)</span>;</span><br><span class="line">	<span class="comment">// 从输入流中读取键值数据</span></span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		params.load(is);</span><br><span class="line">	&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 根据指定键获取相对应值</span></span><br><span class="line">	BaseDao.driver = params.getProperty(<span class="string">"driver"</span>);</span><br><span class="line">	BaseDao.url = params.getProperty(<span class="string">"url"</span>);</span><br><span class="line">	BaseDao.user = params.getProperty(<span class="string">"user"</span>);</span><br><span class="line">	BaseDao.password = params.getProperty(<span class="string">"password"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>?useUnicode=true&amp;characterEncoding=当前程序字符集可以防止编程软件在和数据库进行数据交接时会出现的编码问题</li>
+</ul>
+
+  </div>
+  <div class="post-footer">the end</div>
+</article>
+
+          
+  <nav class="pagination post-nav">
+    
+    
+      <a href="/2020/07/06/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <span class="next-post">JavaScript学习笔记<i class="iconfont icon-more"></i></span>
+      </a>
+    
+  </nav>
+
+
+          
+  
+
+
+      </main>
+    </div>
+    <footer>
+      <div class="social-links">
+        
+          
+            <a href="https://www.zhihu.com/" target="_blank" rel="noopener"><i class="iconfont icon-zhihu"></i></a>
+          
+        
+          
+            <a href="https://weibo.com" target="_blank" rel="noopener"><i class="iconfont icon-weibo"></i></a>
+          
+        
+          
+            <a href="https://github.com/" target="_blank" rel="noopener"><i class="iconfont icon-github"></i></a>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </div>
+      
+        <div class="quote">
+          <p>Love all, trust a few, do wrong to none.——William Shakespeare</p>
+        </div>
+      
+      <div class="copyright">
+        <p>
+          由 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
+          <span>|</span>
+          主题 - <a href="https://github.com/wa-ri/hexo-theme-ztopic" target="_blank" rel="noopener">ztopic</a
+        </p>
+        <p>
+          <span>
+          
+          &copy;
+          
+            2020
+          
+          </span>
+          <i class="iconfont icon-circle"></i>
+          <span>Ldy</span>
+        </p>
+      </div>
+</footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  <div id="mobile-nav">
+  <nav id="mobile-nav-menu">
+    
+      <a href="/" class="mobile-nav-link"><i class="iconfont icon-home"></i>首页</a>
+    
+      <a href="/archives" class="mobile-nav-link"><i class="iconfont icon-archive"></i>归档</a>
+    
+      <a href="/about" class="mobile-nav-link"><i class="iconfont icon-about"></i>关于</a>
+    
+    <div class="mobile-intro"><i class="iconfont icon-pen"></i>practice makes perfect</div>
+  </nav>
+</div>
+
+
+  
+<script src="/libs/jQuery/jquery-3.2.1.min.js"></script>
+
+  
+<script src="/libs/slideout/slideout.min.js"></script>
+
+  
+    
+<link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css">
+
+    
+<script src="/libs/fancybox/jquery.fancybox.pack.js"></script>
+
+  
+  
+
+  
+<script src="/js/ztopic.js"></script>
+
+</body>
+</html>
