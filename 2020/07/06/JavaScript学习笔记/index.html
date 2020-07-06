@@ -1,106 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="theme-color" content="#34495e">
+  <meta charset="utf-8">
+  
+
+  
   <title>JavaScript学习笔记 | 归途</title>
-  <link rel="alternate" href="path/of/rss" type="application/atom+xml">
-  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript学习笔记(Ldy)一：JS基础01：变量1：变量定义1var 变量名 &#x3D; 任意类型值;   JS变量定义时无多个类型关键字，var一招走遍天下  2：数据类型1234567数值型（包括整数和浮点数）：Number;字符串型（包括字符型和字符串型）：String;布尔型：boolean;定义型（定义未赋值）：undefined;空值：null;非数值类型：NAN;对象类型：obj">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript学习笔记">
+<meta property="og:url" content="https://ldyocean.github.io.git/2020/07/06/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="归途">
+<meta property="og:description" content="JavaScript学习笔记(Ldy)一：JS基础01：变量1：变量定义1var 变量名 &#x3D; 任意类型值;   JS变量定义时无多个类型关键字，var一招走遍天下  2：数据类型1234567数值型（包括整数和浮点数）：Number;字符串型（包括字符型和字符串型）：String;布尔型：boolean;定义型（定义未赋值）：undefined;空值：null;非数值类型：NAN;对象类型：obj">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-07-06T04:07:24.570Z">
+<meta property="article:modified_time" content="2020-06-18T02:50:18.430Z">
+<meta property="article:author" content="Ldy">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="归途" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
   
 <link rel="stylesheet" href="/css/style.css">
-
-  
-
-  
-
-  
-
-  
 
 <meta name="generator" content="Hexo 4.2.1"></head>
 
 <body>
-  <div class="mobile-header">
-    <span><i class="iconfont icon-turnon" id="mobile-nav-toggle"></i></span>
-    <div class="mobile-logo">
-      <a href="/.">Ztopic</a>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">归途</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">一个人的成长</a>
+        </h2>
+      
     </div>
-  </div>
-  <div class="page" id="mobile-nav-panel">
-    <div class="container">
-      <header class="site-nav">
-      <div class="nav-content">
-        <div class="logo">
-          <a href="/">Ztopic</a>
-        </div>
-        <nav class="navbar">
-          <ul>
-            
-              <li class="menu-item">
-                <a href="/" class="menu-item-link"><i class="iconfont icon-home"></i>首页</a>
-              </li>
-            
-              <li class="menu-item">
-                <a href="/archives" class="menu-item-link"><i class="iconfont icon-archive"></i>归档</a>
-              </li>
-            
-              <li class="menu-item">
-                <a href="/about" class="menu-item-link"><i class="iconfont icon-about"></i>关于</a>
-              </li>
-            
-          </ul>
-        </nav>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://LdyOcean.github.io.git"></form>
       </div>
+    </div>
+  </div>
 </header>
-
-      <div class="banner">
-  <div class="show">
-    <!-- <img src="/" alt="banner"> -->
-    <div class="banner-title">
-      
-        <div class="post-title">
-          JavaScript学习笔记
-            <div class="post-tags">
-    		    
-    	      </div>
-        </div>
-      
-    </div>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/07/06/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-07-06T04:07:24.570Z" itemprop="datePublished">2020-07-06</time>
+</a>
+    
   </div>
-</div>
-
-      <main class="main"id="main">
-          <article class="post">
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript学习笔记
+    </h1>
   
 
-  <header>
-    <div class="post-title mobile-post-title">
-      <h1>JavaScript学习笔记</h1>
-        <div class="post-tags">
-        
-        </div>
-    </div>
-    <div class="post-meta">
-      <span class="post-time"><i class="iconfont icon-calendar"></i>2020-07-06</span>
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
       
-      <!----------------------------------->
-        
-      <!----------------------------------->
-    </div>
-  </header>
-  
-  <div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">目录</h2>
-    <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript学习笔记-Ldy"><span class="toc-text">JavaScript学习笔记(Ldy)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一：JS基础"><span class="toc-text">一：JS基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：变量"><span class="toc-text">01：变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：变量定义"><span class="toc-text">1：变量定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：数据类型"><span class="toc-text">2：数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：数值类型基本函数"><span class="toc-text">3：数值类型基本函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：运算符"><span class="toc-text">02：运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：概要"><span class="toc-text">1：概要</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：全等与不全等"><span class="toc-text">2：全等与不全等</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：instanceof-关键字"><span class="toc-text">3：instanceof 关键字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：运算符顺序"><span class="toc-text">4：运算符顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：断点调试"><span class="toc-text">03：断点调试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：调试方法"><span class="toc-text">1：调试方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：调试小方法"><span class="toc-text">2：调试小方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：数组"><span class="toc-text">04：数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：创建数组"><span class="toc-text">1：创建数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：数组常用函数"><span class="toc-text">2：数组常用函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：函数"><span class="toc-text">05：函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：定义函数"><span class="toc-text">1：定义函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：参数详解"><span class="toc-text">2：参数详解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：返回值"><span class="toc-text">3：返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：函数内置对象使用"><span class="toc-text">4：函数内置对象使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：作用域"><span class="toc-text">06：作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#01：变量作用域"><span class="toc-text">01：变量作用域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#02：函数作用域"><span class="toc-text">02：函数作用域</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07：预解析"><span class="toc-text">07：预解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08：对象详解"><span class="toc-text">08：对象详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：创建对象"><span class="toc-text">1：创建对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：使用对象"><span class="toc-text">2：使用对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：遍历对象"><span class="toc-text">3：遍历对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#09：内置对象"><span class="toc-text">09：内置对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10：如何定义-JavaScript-代码"><span class="toc-text">10：如何定义 JavaScript 代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11：常用函数API"><span class="toc-text">11：常用函数API</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二：JS核心DOM"><span class="toc-text">二：JS核心DOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：如何获取页面-元素-element-对象"><span class="toc-text">01：如何获取页面 元素(element)对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：页面文档模型对象"><span class="toc-text">1：页面文档模型对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：获取页面元素对象-无兼容性问题"><span class="toc-text">2：获取页面元素对象(无兼容性问题)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：HTML5新增获取页面元素对象函数（IE9以上版本支持）"><span class="toc-text">3：HTML5新增获取页面元素对象函数（IE9以上版本支持）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：事件详解"><span class="toc-text">02：事件详解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概要：触发-gt-响应事件"><span class="toc-text">概要：触发 &gt; 响应事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1：鼠标事件（MouseEvent）"><span class="toc-text">1：鼠标事件（MouseEvent）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：键盘事件（KeyboardEvent）"><span class="toc-text">2：键盘事件（KeyboardEvent）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：添加事件"><span class="toc-text">3：添加事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：删除事件"><span class="toc-text">4：删除事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：事件流详解"><span class="toc-text">5：事件流详解</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①：事件流分类"><span class="toc-text">①：事件流分类</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6：事件对象"><span class="toc-text">6：事件对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：操作页面元素"><span class="toc-text">03：操作页面元素</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：修改获取元素内容"><span class="toc-text">1：修改获取元素内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：修改元素属性"><span class="toc-text">2：修改元素属性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3：获取属性-自定义元素属性"><span class="toc-text">3：获取属性+自定义元素属性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①：获取属性"><span class="toc-text">①：获取属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②：定义属性"><span class="toc-text">②：定义属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#③：删除属性"><span class="toc-text">③：删除属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：节点-node-操作"><span class="toc-text">04：节点(node) 操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：获取节点"><span class="toc-text">1：获取节点</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①：获取父节点"><span class="toc-text">①：获取父节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②：获取子节点"><span class="toc-text">②：获取子节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#③：获取第一个子节点与最后一个子节点"><span class="toc-text">③：获取第一个子节点与最后一个子节点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#④：获取兄弟节点"><span class="toc-text">④：获取兄弟节点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：创建节点"><span class="toc-text">2：创建节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：追加节点"><span class="toc-text">3：追加节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：删除节点"><span class="toc-text">4：删除节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：克隆节点"><span class="toc-text">5：克隆节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6：替换节点"><span class="toc-text">6：替换节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三：JS核心BOM"><span class="toc-text">三：JS核心BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#01：事件"><span class="toc-text">01：事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：页面操作事件"><span class="toc-text">1：页面操作事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：滚动事件"><span class="toc-text">2：滚动事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：移动端事件"><span class="toc-text">3：移动端事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：定时器"><span class="toc-text">4：定时器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：监听过渡事件-发生改变事件"><span class="toc-text">5：监听过渡事件+发生改变事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：获取页面数据"><span class="toc-text">02：获取页面数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：页面数据"><span class="toc-text">1：页面数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：回调函数"><span class="toc-text">03：回调函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#概述：回调函数为当一个任务执行完毕后回头调用的函数，比如我们的定时器中函数就属于回调函数"><span class="toc-text">概述：回调函数为当一个任务执行完毕后回头调用的函数，比如我们的定时器中函数就属于回调函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：BOM对象"><span class="toc-text">04：BOM对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：location对象"><span class="toc-text">1：location对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：navigator对象"><span class="toc-text">2：navigator对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：history对象"><span class="toc-text">3：history对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：元素偏移量offset系列（常用于获取元素位置）"><span class="toc-text">05：元素偏移量offset系列（常用于获取元素位置）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：元素可视区client系列（常用于获取元素大小）"><span class="toc-text">06：元素可视区client系列（常用于获取元素大小）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07：元素滚动scroll系列（常用于获取元素滚动距离）"><span class="toc-text">07：元素滚动scroll系列（常用于获取元素滚动距离）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08：立即执行函数"><span class="toc-text">08：立即执行函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#09：缓步动画原理"><span class="toc-text">09：缓步动画原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10：classList类名操作"><span class="toc-text">10：classList类名操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11：移动端开发常用插件"><span class="toc-text">11：移动端开发常用插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12：开发常用框架"><span class="toc-text">12：开发常用框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13：本地存储"><span class="toc-text">13：本地存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：sessionStorage-5M"><span class="toc-text">1：sessionStorage(5M)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：locaStorage-20M"><span class="toc-text">2：locaStorage(20M)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四：JSOOP-面向对象"><span class="toc-text">四：JSOOP(面向对象)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：创建类"><span class="toc-text">01：创建类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：构造函数"><span class="toc-text">02：构造函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：ES6新增函数"><span class="toc-text">03：ES6新增函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：如何改变this指向"><span class="toc-text">04：如何改变this指向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：严格模式"><span class="toc-text">05：严格模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：拷贝"><span class="toc-text">06：拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#07：正则表达式"><span class="toc-text">07：正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#08：新增语法规范"><span class="toc-text">08：新增语法规范</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五：JQuery"><span class="toc-text">五：JQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#01：JQuery在线帮助文档"><span class="toc-text">01：JQuery在线帮助文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#02：JQuery基本函数"><span class="toc-text">02：JQuery基本函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：选择器"><span class="toc-text">1：选择器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：初始化函数"><span class="toc-text">2：初始化函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：设置CSS样式"><span class="toc-text">3：设置CSS样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4：设置类名样式"><span class="toc-text">4：设置类名样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5：动画效果"><span class="toc-text">5：动画效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6：得到当前元素索引号"><span class="toc-text">6：得到当前元素索引号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7：获取元素属性"><span class="toc-text">7：获取元素属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8：设置元素内存属性"><span class="toc-text">8：设置元素内存属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9：操作元素内容文本"><span class="toc-text">9：操作元素内容文本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10：保留小数位"><span class="toc-text">10：保留小数位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11：each方法"><span class="toc-text">11：each方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12：元素尺寸"><span class="toc-text">12：元素尺寸</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13：位置偏移"><span class="toc-text">13：位置偏移</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14：返回顶部"><span class="toc-text">14：返回顶部</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15：拷贝对象"><span class="toc-text">15：拷贝对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#03：jQuery对象和DOM对象"><span class="toc-text">03：jQuery对象和DOM对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#04：事件操作"><span class="toc-text">04：事件操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1：绑定事件"><span class="toc-text">1：绑定事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2：解绑事件"><span class="toc-text">2：解绑事件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3：自动调用事件"><span class="toc-text">3：自动调用事件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#05：多库共存"><span class="toc-text">05：多库共存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#06：jQuery插件"><span class="toc-text">06：jQuery插件</span></a></li></ol></li></ol></li></ol>
-    </div>
-  </div>
-
-
-  <div class="post-content">
-    <h1 id="JavaScript学习笔记-Ldy"><a href="#JavaScript学习笔记-Ldy" class="headerlink" title="JavaScript学习笔记(Ldy)"></a>JavaScript学习笔记(Ldy)</h1><h2 id="一：JS基础"><a href="#一：JS基础" class="headerlink" title="一：JS基础"></a>一：JS基础</h2><h3 id="01：变量"><a href="#01：变量" class="headerlink" title="01：变量"></a>01：变量</h3><h4 id="1：变量定义"><a href="#1：变量定义" class="headerlink" title="1：变量定义"></a>1：变量定义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名 = 任意类型值;</span><br></pre></td></tr></table></figure>
+        <h1 id="JavaScript学习笔记-Ldy"><a href="#JavaScript学习笔记-Ldy" class="headerlink" title="JavaScript学习笔记(Ldy)"></a>JavaScript学习笔记(Ldy)</h1><h2 id="一：JS基础"><a href="#一：JS基础" class="headerlink" title="一：JS基础"></a>一：JS基础</h2><h3 id="01：变量"><a href="#01：变量" class="headerlink" title="01：变量"></a>01：变量</h3><h4 id="1：变量定义"><a href="#1：变量定义" class="headerlink" title="1：变量定义"></a>1：变量定义</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 变量名 = 任意类型值;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>JS变量定义时无多个类型关键字，var一招走遍天下</li>
@@ -915,126 +907,122 @@
 <h3 id="06：jQuery插件"><a href="#06：jQuery插件" class="headerlink" title="06：jQuery插件"></a>06：jQuery插件</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">jQuery插件库：http:<span class="comment">//www.jq22.com/</span></span><br><span class="line">jQuery之家：http:<span class="comment">//www.htmleaf.com/</span></span><br><span class="line">全屏滚动：http:<span class="comment">//www.dowebok.com/demo/2014/77/</span></span><br><span class="line">Bootstrap插件：https:<span class="comment">//v3.bootcss.com/</span></span><br></pre></td></tr></table></figure>
 
 
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://ldyocean.github.io.git/2020/07/06/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckca0apo10001motm5ter8dhl" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-  <div class="post-footer">the end</div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/07/06/JDBC%EF%BC%88Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JDBC（Java连接数据库）学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/07/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
-          
-  <nav class="pagination post-nav">
-    
-      <a href="/2020/07/06/JDBC%EF%BC%88Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        <span class="prev-post"><i class="iconfont icon-back"></i>JDBC（Java连接数据库）学习笔记</span>
-      </a>
-    
-    
-      <a href="/2020/07/06/hello-world/">
-        <span class="next-post">Hello World<i class="iconfont icon-more"></i></span>
-      </a>
-    
-  </nav>
-
-
-          
+</section>
+        
+          <aside id="sidebar">
   
+    
 
+  
+    
 
-      </main>
-    </div>
-    <footer>
-      <div class="social-links">
-        
-          
-            <a href="https://www.zhihu.com/" target="_blank" rel="noopener"><i class="iconfont icon-zhihu"></i></a>
-          
-        
-          
-            <a href="https://weibo.com" target="_blank" rel="noopener"><i class="iconfont icon-weibo"></i></a>
-          
-        
-          
-            <a href="https://github.com/" target="_blank" rel="noopener"><i class="iconfont icon-github"></i></a>
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-      
-        <div class="quote">
-          <p>Love all, trust a few, do wrong to none.——William Shakespeare</p>
-        </div>
-      
-      <div class="copyright">
-        <p>
-          由 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 强力驱动
-          <span>|</span>
-          主题 - <a href="https://github.com/wa-ri/hexo-theme-ztopic" target="_blank" rel="noopener">ztopic</a
-        </p>
-        <p>
-          <span>
-          
-          &copy;
-          
-            2020
-          
-          </span>
-          <i class="iconfont icon-circle"></i>
-          <span>Ldy</span>
-        </p>
-      </div>
-</footer>
-
-    <div class="back-to-top" id="back-to-top">
-      <i class="iconfont icon-up"></i>
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a></li></ul>
     </div>
   </div>
-  <div id="mobile-nav">
-  <nav id="mobile-nav-menu">
-    
-      <a href="/" class="mobile-nav-link"><i class="iconfont icon-home"></i>首页</a>
-    
-      <a href="/archives" class="mobile-nav-link"><i class="iconfont icon-archive"></i>归档</a>
-    
-      <a href="/about" class="mobile-nav-link"><i class="iconfont icon-about"></i>关于</a>
-    
-    <div class="mobile-intro"><i class="iconfont icon-pen"></i>practice makes perfect</div>
-  </nav>
-</div>
 
 
   
-<script src="/libs/jQuery/jquery-3.2.1.min.js"></script>
-
-  
-<script src="/libs/slideout/slideout.min.js"></script>
-
-  
     
-<link rel="stylesheet" href="/libs/fancybox/jquery.fancybox.css">
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/07/06/JDBC%EF%BC%88Java%E8%BF%9E%E6%8E%A5%E6%95%B0%E6%8D%AE%E5%BA%93%EF%BC%89%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JDBC（Java连接数据库）学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/06/JavaScript%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JavaScript学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/07/06/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 Ldy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
     
-<script src="/libs/fancybox/jquery.fancybox.pack.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
 
   
-  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
   
-<script src="/js/ztopic.js"></script>
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
 
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
 </body>
 </html>
